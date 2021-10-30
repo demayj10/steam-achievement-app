@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/steam-achievement-app/static/css/main.106baaae.chunk.css",
-    "main.js": "/steam-achievement-app/static/js/main.0e34ec28.chunk.js",
-    "main.js.map": "/steam-achievement-app/static/js/main.0e34ec28.chunk.js.map",
-    "runtime-main.js": "/steam-achievement-app/static/js/runtime-main.6ed0405c.js",
-    "runtime-main.js.map": "/steam-achievement-app/static/js/runtime-main.6ed0405c.js.map",
-    "static/js/2.8801b7a0.chunk.js": "/steam-achievement-app/static/js/2.8801b7a0.chunk.js",
-    "static/js/2.8801b7a0.chunk.js.map": "/steam-achievement-app/static/js/2.8801b7a0.chunk.js.map",
-    "static/js/3.bc47c9f2.chunk.js": "/steam-achievement-app/static/js/3.bc47c9f2.chunk.js",
-    "static/js/3.bc47c9f2.chunk.js.map": "/steam-achievement-app/static/js/3.bc47c9f2.chunk.js.map",
+    "main.js": "/steam-achievement-app/static/js/main.4bd96ea2.chunk.js",
+    "main.js.map": "/steam-achievement-app/static/js/main.4bd96ea2.chunk.js.map",
+    "runtime-main.js": "/steam-achievement-app/static/js/runtime-main.14e33f20.js",
+    "runtime-main.js.map": "/steam-achievement-app/static/js/runtime-main.14e33f20.js.map",
+    "static/js/2.90549ae2.chunk.js": "/steam-achievement-app/static/js/2.90549ae2.chunk.js",
+    "static/js/2.90549ae2.chunk.js.map": "/steam-achievement-app/static/js/2.90549ae2.chunk.js.map",
+    "static/js/3.1ab602c9.chunk.js": "/steam-achievement-app/static/js/3.1ab602c9.chunk.js",
+    "static/js/3.1ab602c9.chunk.js.map": "/steam-achievement-app/static/js/3.1ab602c9.chunk.js.map",
     "index.html": "/steam-achievement-app/index.html",
     "static/css/main.106baaae.chunk.css.map": "/steam-achievement-app/static/css/main.106baaae.chunk.css.map",
-    "static/js/2.8801b7a0.chunk.js.LICENSE.txt": "/steam-achievement-app/static/js/2.8801b7a0.chunk.js.LICENSE.txt"
+    "static/js/2.90549ae2.chunk.js.LICENSE.txt": "/steam-achievement-app/static/js/2.90549ae2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6ed0405c.js",
-    "static/js/2.8801b7a0.chunk.js",
+    "static/js/runtime-main.14e33f20.js",
+    "static/js/2.90549ae2.chunk.js",
     "static/css/main.106baaae.chunk.css",
-    "static/js/main.0e34ec28.chunk.js"
+    "static/js/main.4bd96ea2.chunk.js"
   ]
 }
