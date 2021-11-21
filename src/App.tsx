@@ -1,23 +1,24 @@
 import React, { FC } from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
-import { getGameAchievements, submitSteamId } from './lib/steamDataCollectors';
+import HomeScreen from './components/HomeScreen/HomeScreen';
+import { SingleGameScreen } from './components/SingleGameScreen/SingleGameScreen';
+import Footer from './components/Footer/Footer';
 
-const STEAM_ID = '76561198052061156';
+const CoreApp: FC = () => (
+  <div className="App">
+    <Routes>
+      <Route path="/" element={<HomeScreen />} />
+      <Route path="game/:gameId" element={<SingleGameScreen />} />
+    </Routes>
+    <Footer />
+  </div>
+);
 
 const App: FC = () => (
-  <div className="App">
-    <h1>Hello, World</h1>
-    <button type="button" aria-label="submit id" onClick={() => submitSteamId(STEAM_ID)}>
-      Hi!
-    </button>
-    <button
-      type="button"
-      aria-label="get achievements"
-      onClick={() => getGameAchievements(STEAM_ID, '8930')}
-    >
-      Civ 5
-    </button>
-  </div>
+  <BrowserRouter basename="steam-achievement-app">
+    <CoreApp />
+  </BrowserRouter>
 );
 
 export default App;

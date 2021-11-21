@@ -1,0 +1,11 @@
+.game-card {
+    margin: 1em 1.5em;
+    transition: transform 0.2s ease-in-out !important;
+    flex: 2 auto;
+}
+
+.game-card:hover {
+    box-shadow: 0 0 10px #444400;
+    transform: scale(1.1);
+    flex-grow: 2;
+}

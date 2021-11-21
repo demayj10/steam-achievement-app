@@ -1,0 +1,45 @@
+#single-game-content {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#game-cover-image-container {
+    width: 100%;
+    background-color: #888888;
+    height: 215px;
+}
+
+#game-cover-image {
+    width: max-content;
+    object-fit: cover;
+}
+
+#game-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#game-title {
+    margin: 0.25em auto;
+    width: fit-content;
+    font-weight: bold;
+}
+
+#game-description {
+    margin: 1em auto;
+    text-indent: 1em;
+}
+
+#achievement-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1200px) {
+    #achievement-card-container {
+        justify-content: space-evenly;
+    }
+}
