@@ -1,0 +1,44 @@
+.card-body {
+    margin: 1em 1.5em;
+    display: flex;
+    flex-direction: row;
+
+    width: 45%;
+    max-width: 45%;
+    max-height: 125px;
+
+    text-align: start;
+
+    transition: transform 0.2s ease-in-out !important;
+    flex: 2 auto;
+}
+
+.card-body:hover {
+    box-shadow: 0 0 10px #444400;
+    transform: scale(1.1);
+    flex-grow: 2;
+}
+
+.card-image {
+    height: 125px !important;
+    width: 125px !important;
+    object-fit: cover !important;
+}
+
+.card-content {
+    overflow: hidden;
+}
+
+.card-content > h6 {
+    font-weight: bold;
+}
+
+.card-content > p {
+    padding: 0.2em 0.1em;
+}
+
+@media screen and (max-width: 1200px) {
+    .card-body {
+        width: 90%;
+    }
+}

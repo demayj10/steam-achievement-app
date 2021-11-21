@@ -1,0 +1,19 @@
+#games-collection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1em auto;
+    width: 95%;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+#card-container > div {
+    max-width: 30%;
+}

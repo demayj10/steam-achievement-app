@@ -8,10 +8,10 @@ export interface AchievementData {
     unlockTime: number // Date convertable
 }
 
+export type StatusType = 'fulfilled' | 'pending' | 'rejected' | 'idle';
+
 export interface GetAchievementsResponse {
-    data: {
-        achievements: AchievementData[];
-    }
+    data: AchievementData[]
 }
 
 export interface GameData {
@@ -25,9 +25,7 @@ export interface GameData {
 }
 
 export interface GetGamesResponse {
-    data: {
-        games: GameData[];
-    }
+    data: GameData[]
 }
 
 export interface GroupData {
@@ -41,5 +39,12 @@ export interface GroupData {
 export interface AppState {
     steamId: string,
     games: GameData[],
-    groups: GroupData[]
+    groups: GroupData[],
+    loadedAchievements: AchievementData[],
+    appStatus: StatusType,
+    error: string | null,
+}
+
+export interface HomeState {
+    games: GameData[],
 }

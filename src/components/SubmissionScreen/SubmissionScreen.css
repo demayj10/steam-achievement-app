@@ -1,0 +1,26 @@
+#submission-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 80%;
+    margin: 0 auto 6em;
+    height: 40vh;
+
+    box-shadow: 2px 2px 5px 2px #808080;
+}
+
+#submission-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    margin: 0.2em auto;
+    width: 70%;
+}
+
+#submission-content > button {
+    height: 5vh;
+    width: 40%;
+    margin: 1em auto 0;
+}
