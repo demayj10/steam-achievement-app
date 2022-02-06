@@ -22,7 +22,6 @@
   "plugins": [
     "@typescript-eslint",
     "import",
-    "jest",
     "react"
   ],
   "rules": {
