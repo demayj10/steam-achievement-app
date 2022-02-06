@@ -10,8 +10,8 @@ import { cleanTextContent } from '../../lib/helpers';
 import Navbar from '../Navbar/Navbar';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
-type GameScreenParams = {
-    gameId: string | undefined,
+interface GameScreenParams {
+    gameId?: string,
 }
 
 export const SingleGameScreen: FC = () => {
