@@ -28,3 +28,5 @@ jobs:
       - run: npm ci # this means npm install
       - run: npm test
       - run: npm run build
+        env:
+          CI: false
