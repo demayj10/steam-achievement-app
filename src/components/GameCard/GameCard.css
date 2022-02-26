@@ -5,7 +5,7 @@
 }
 
 .game-card:hover {
-    box-shadow: 0 0 10px #444400;
+    box-shadow: 0 0 10px #2e5056;
     transform: scale(1.1);
     flex-grow: 2;
 }

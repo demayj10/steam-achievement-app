@@ -20,7 +20,7 @@ const Navbar: FC<NavbarProps> = (props) => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton size="large" edge="start" color="info" onClick={() => handleGoHome()}>
+        <IconButton size="large" edge="start" onClick={() => handleGoHome()}>
           <HomeIcon />
         </IconButton>
         <Typography variant="h5">{navTitle}</Typography>
