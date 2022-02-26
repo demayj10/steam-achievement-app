@@ -1,12 +1,10 @@
 import React, { FC } from 'react';
-import { Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useAppSelector } from '../../app/hooks';
 import { selectAppStatus, selectGameById, selectLoadedAchievements } from '../../AppSlice';
 import { AchievementData, StatusType } from '../../types';
 import { AchievementCard } from '../AchievementCard/AchievementCard';
 import './SingleGameScreen.css';
-import { cleanTextContent } from '../../lib/helpers';
 import Navbar from '../Navbar/Navbar';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
@@ -33,10 +31,8 @@ export const SingleGameScreen: FC = () => {
       content = <h2>{'Huh, that\'s weird, you\'re not supposed to be here!'}</h2>;
     } else {
       const {
-        appid: id, name, headerImage, detailedDescription,
+        appid: id, name, headerImage,
       } = currentGame;
-
-      const description = cleanTextContent(detailedDescription);
 
       content = (
         <div key={id}>
