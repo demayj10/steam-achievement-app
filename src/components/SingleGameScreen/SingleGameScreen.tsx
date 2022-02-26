@@ -1,5 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import {
+  FormControlLabel, Grid, Switch,
+} from '@mui/material';
 import { useAppSelector } from '../../app/hooks';
 import { selectAppStatus, selectGameById, selectLoadedAchievements } from '../../AppSlice';
 import { AchievementData, StatusType } from '../../types';
@@ -15,6 +18,7 @@ interface GameScreenParams {
 export const SingleGameScreen: FC = () => {
   const appStatus: StatusType = useAppSelector(selectAppStatus);
   const { gameId }: GameScreenParams = useParams();
+  const [hideUnlockedAchievements, setHideUnlockedAchievements] = useState<boolean>(false);
 
   if (gameId === undefined) {
     return <h2>Where did your game id go?</h2>;
@@ -40,20 +44,40 @@ export const SingleGameScreen: FC = () => {
           <div id="game-cover-image-container">
             <img id="game-cover-image" src={headerImage} alt="game cover" />
           </div>
+          <div>
+            <Grid
+              container
+              direction="row"
+              justifyContent="flex-end"
+              alignItems="center"
+            >
+              <FormControlLabel
+                control={<Switch />}
+                label="Hide Unlocked Achievements"
+                value={hideUnlockedAchievements}
+                onChange={() => setHideUnlockedAchievements(!hideUnlockedAchievements)}
+              />
+            </Grid>
+          </div>
           <div id="game-content">
             <div id="achievement-card-container">
-              {achievements.map((achievement) => (
-                <AchievementCard
-                  key={achievement.apiName}
-                  apiName={achievement.apiName}
-                  displayName={achievement.displayName}
-                  description={achievement.description}
-                  icon={achievement.icon}
-                  iconGray={achievement.iconGray}
-                  achieved={achievement.achieved}
-                  unlockTime={achievement.unlockTime}
-                />
-              ))}
+              {achievements.map((achievement) => {
+                if (!hideUnlockedAchievements || !achievement.achieved) {
+                  return (
+                    <AchievementCard
+                      key={achievement.apiName}
+                      apiName={achievement.apiName}
+                      displayName={achievement.displayName}
+                      description={achievement.description}
+                      icon={achievement.icon}
+                      iconGray={achievement.iconGray}
+                      achieved={achievement.achieved}
+                      unlockTime={achievement.unlockTime}
+                    />
+                  );
+                }
+                return null;
+              })}
             </div>
 
           </div>
@@ -61,7 +85,12 @@ export const SingleGameScreen: FC = () => {
       );
     }
   } else {
-    content = <h2>Error!</h2>;
+    content = (
+      <div>
+        <Navbar navTitle="" />
+        <h2>Error!</h2>
+      </div>
+    );
   }
 
   return (
