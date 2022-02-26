@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/steam-achievement-app/static/css/main.d6575752.css",
-    "main.js": "/steam-achievement-app/static/js/main.84b5388e.js",
+    "main.css": "/steam-achievement-app/static/css/main.002f2f53.css",
+    "main.js": "/steam-achievement-app/static/js/main.fc1262e9.js",
     "static/js/787.5d80b32d.chunk.js": "/steam-achievement-app/static/js/787.5d80b32d.chunk.js",
     "index.html": "/steam-achievement-app/index.html",
-    "main.d6575752.css.map": "/steam-achievement-app/static/css/main.d6575752.css.map",
-    "main.84b5388e.js.map": "/steam-achievement-app/static/js/main.84b5388e.js.map",
+    "main.002f2f53.css.map": "/steam-achievement-app/static/css/main.002f2f53.css.map",
+    "main.fc1262e9.js.map": "/steam-achievement-app/static/js/main.fc1262e9.js.map",
     "787.5d80b32d.chunk.js.map": "/steam-achievement-app/static/js/787.5d80b32d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6575752.css",
-    "static/js/main.84b5388e.js"
+    "static/css/main.002f2f53.css",
+    "static/js/main.fc1262e9.js"
   ]
 }
