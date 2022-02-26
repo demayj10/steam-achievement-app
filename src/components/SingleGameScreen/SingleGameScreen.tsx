@@ -45,7 +45,6 @@ export const SingleGameScreen: FC = () => {
             <img id="game-cover-image" src={headerImage} alt="game cover" />
           </div>
           <div id="game-content">
-            <Typography id="game-description" variant="body1">{description}</Typography>
             <div id="achievement-card-container">
               {achievements.map((achievement) => (
                 <AchievementCard
