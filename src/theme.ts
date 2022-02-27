@@ -27,4 +27,14 @@ export const theme = createTheme({
       '"Segoe UI Symbol"',
     ].join(','),
   },
+  components: {
+    MuiLinearProgress: {
+      styleOverrides: {
+        root: {
+          height: 10,
+          borderRadius: '1em',
+        },
+      },
+    },
+  },
 });

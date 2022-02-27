@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
-  FormControlLabel, Grid, Switch,
+  FormControlLabel, Grid, LinearProgress, Switch, Box, Typography,
 } from '@mui/material';
 import { useAppSelector } from '../../app/hooks';
 import { selectAppStatus, selectGameById, selectLoadedAchievements } from '../../AppSlice';
@@ -26,6 +26,12 @@ export const SingleGameScreen: FC = () => {
 
   const currentGame = useAppSelector((state) => selectGameById(state, gameId));
   const achievements: AchievementData[] = useAppSelector(selectLoadedAchievements);
+  const countOfUnlockedAchievements: number = achievements.filter(
+    (achievement: AchievementData) => achievement.achieved,
+  ).length;
+  const percentComplete: number = Math.round(
+    (countOfUnlockedAchievements / achievements.length) * 100,
+  );
 
   let content;
   if (appStatus === 'pending') {
@@ -51,6 +57,32 @@ export const SingleGameScreen: FC = () => {
               justifyContent="flex-end"
               alignItems="center"
             >
+              <Box sx={{
+                display: 'flex',
+                alignItems: 'center',
+                width: '50%',
+                mr: 2,
+              }}
+              >
+                <Box sx={{ minWidth: 40 }}>
+                  <Typography variant="body1">
+                    {`${countOfUnlockedAchievements}/${achievements.length}`}
+                  </Typography>
+                </Box>
+                <Box sx={{ width: '100%', mr: 1, ml: 3 }}>
+                  <LinearProgress
+                    variant="determinate"
+                    value={percentComplete}
+                    color="primary"
+                  />
+                </Box>
+                <Box sx={{ minWidth: 40, mr: 2 }}>
+                  <Typography variant="body1">
+                    {`${percentComplete}%`}
+                  </Typography>
+                </Box>
+              </Box>
+
               <FormControlLabel
                 control={<Switch />}
                 label="Hide Unlocked Achievements"
