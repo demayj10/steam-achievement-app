@@ -3,16 +3,20 @@ import {
   Button, Paper, TextField, Typography,
 } from '@mui/material';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { fetchGames } from '../../AppSlice';
 import './SubmissionScreen.css';
 
 export const SubmissionScreen: FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [steamId, setSteamId] = useState('');
 
   const handleSubmitSteamId = () => {
     dispatch(fetchGames(steamId));
+    localStorage.setItem('steamId', steamId);
     setSteamId('');
+    navigate('/games');
   };
 
   return (

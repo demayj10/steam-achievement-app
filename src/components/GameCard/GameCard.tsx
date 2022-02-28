@@ -22,7 +22,7 @@ export const GameCard: FC<GameCardProps> = (props) => {
   const navigate = useNavigate();
 
   const handleGameSelect = () => {
-    navigate(`game/${id}`);
+    navigate(`/games/${id}`);
     dispatch(fetchAchievements({ steamId, gameId: id }));
   };
 

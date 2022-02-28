@@ -10,6 +10,7 @@ import { AchievementCard } from '../AchievementCard/AchievementCard';
 import './SingleGameScreen.css';
 import Navbar from '../Navbar/Navbar';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import ErrorScreen from '../ErrorScreen/ErrorScreen';
 
 interface GameScreenParams {
     gameId?: string,
@@ -41,12 +42,11 @@ export const SingleGameScreen: FC = () => {
       content = <h2>{'Huh, that\'s weird, you\'re not supposed to be here!'}</h2>;
     } else {
       const {
-        appid: id, name, headerImage,
+        appid: id, headerImage,
       } = currentGame;
 
       content = (
         <div key={id}>
-          <Navbar navTitle={name} />
           <div id="game-cover-image-container">
             <img id="game-cover-image" src={headerImage} alt="game cover" />
           </div>
@@ -117,12 +117,8 @@ export const SingleGameScreen: FC = () => {
       );
     }
   } else {
-    content = (
-      <div>
-        <Navbar navTitle="" />
-        <h2>Error!</h2>
-      </div>
-    );
+    const message = 'It looks like this game might not have achievements associated with it on Steam. Please reach out to the team if this is incorrect.';
+    content = <ErrorScreen errorMessage={message} />;
   }
 
   return (
