@@ -14,7 +14,11 @@ const Navbar: FC<NavbarProps> = (props) => {
   const navigate = useNavigate();
 
   const handleGoHome = () => {
-    navigate('/');
+    if (localStorage.getItem('steamId')) {
+      navigate('games/');
+    } else {
+      navigate('steamId/');
+    }
   };
 
   return (

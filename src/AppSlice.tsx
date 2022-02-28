@@ -22,6 +22,7 @@ const fetchGames = createAsyncThunk(
   'games/fetchGames',
   async (steamId: string): Promise<{ steamId: string, games: GameData[]}> => {
     const gameData = await submitSteamId(steamId);
+    localStorage.setItem('games', JSON.stringify(gameData));
     return { steamId, games: gameData };
   },
 );
@@ -38,6 +39,14 @@ const appSlice: Slice = createSlice({
   name: 'app',
   initialState,
   reducers: {
+    fetchGamesFromStorage(state) {
+      const steamId: (string | null) = localStorage.getItem('steamId');
+      const gamesString: (string | null) = localStorage.getItem('games');
+      const gamesData = JSON.parse(gamesString !== null ? gamesString : '{}');
+      return {
+        ...state, steamId, games: gamesData, appStatus: 'fulfilled',
+      };
+    },
   },
   extraReducers(builder) {
     builder
@@ -51,7 +60,8 @@ const appSlice: Slice = createSlice({
           steamId: payload.steamId,
           games: state.games.concat(payload.games),
         }
-      )).addCase(fetchGames.rejected, (state: AppState) => (
+      ))
+      .addCase(fetchGames.rejected, (state: AppState) => (
         { ...state, appStatus: 'rejected' }
       ))
       .addCase(fetchAchievements.pending, (state: AppState) => (
@@ -72,6 +82,7 @@ const appSlice: Slice = createSlice({
 
 export default appSlice.reducer;
 
+export const { fetchGamesFromStorage } = appSlice.actions;
 export { fetchGames, fetchAchievements };
 
 export const selectAllGames = (state: RootState): GameData[] => state.app.games;
